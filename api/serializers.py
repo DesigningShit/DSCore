@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
-from .models import RouteKeeperDeviceModel, Profile
+from .models import RouteKeeperDeviceModel, Profile, RouteKeeperDeviceHistoryModel
 
 class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
@@ -19,3 +19,8 @@ class RouteKeeperDeviceModelSerializer(serializers.ModelSerializer):
         fields = ('__all__')
         read_only_fields = ('deviceid',)
         # fields = '__all__'
+
+class RouteKeeperDeviceHistoryModelSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = RouteKeeperDeviceHistoryModel
+        fields = ('deviceid','statuscode','datetime')

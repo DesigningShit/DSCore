@@ -18,12 +18,20 @@ class Profile(AbstractUser):
 class RouteKeeperDeviceModel(models.Model):
     owner = models.ForeignKey('Profile', related_name='owner', on_delete=models.CASCADE)
     name = models.CharField(max_length=250, default='.')
-    deviceid = models.CharField(max_length=25, default=deviceID)
+    deviceid = models.CharField(max_length=25, default=deviceID, unique=True)
     ipDeviceName = models.CharField(max_length=64, default='eth0')
     ipAddress = models.GenericIPAddressField(default='0.0.0.0')
     ipMask = models.GenericIPAddressField(default='0.0.0.0')
     ipGateway = models.GenericIPAddressField(default='0.0.0.0')
     ipExternalAddress = models.GenericIPAddressField(default='0.0.0.0')
+
+    def __str__(self):
+        return self.owner.username+' , '+self.deviceid
+
+class RouteKeeperDeviceHistoryModel(models.Model):
+    deviceid = models.ForeignKey('RouteKeeperDeviceModel', to_field='deviceid', on_delete=models.CASCADE)
+    statuscode = models.CharField(max_length=250, default='0000')
+    datetime = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.owner.username+' , '+self.deviceid
