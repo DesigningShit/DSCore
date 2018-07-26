@@ -1,0 +1,7 @@
+{
+    "users": "http://127.0.0.1:8000/apiv1/users/",
+    "users/username/?": "http://127.0.0.1:8000/apiv1/users/username/?username",
+    "test": "http://127.0.0.1:8000/apiv1/test/",
+    "geo": "http://127.0.0.1:8000/apiv1/geo/",
+    "geo/getlocationbyip": "http://127.0.0.1:8000/apiv1/geo/getlocationbyip/"
+}
