@@ -10,13 +10,13 @@ class Profile(AbstractUser):
     city = models.CharField(max_length=40, blank=True, default='Not Supplied')
     state = models.CharField(max_length=5, blank=True, default='NA')
     zipcode = models.CharField(max_length=12, blank=True, default='NA')
-    userkey = models.CharField(max_length=20, default=deviceID)
+    userkey = models.CharField(max_length=20, default=deviceID, unique=True)
 
     def __str__(self):
         return self.username
 
 class RouteKeeperDeviceModel(models.Model):
-    owner = models.ForeignKey('Profile', related_name='owner', on_delete=models.CASCADE)
+    owner = models.ForeignKey('Profile', related_name='owner', to_field='userkey', on_delete=models.CASCADE)
     name = models.CharField(max_length=250, default='.')
     deviceid = models.CharField(max_length=25, default=deviceID, unique=True)
     ipDeviceName = models.CharField(max_length=64, default='eth0')

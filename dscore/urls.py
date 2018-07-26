@@ -15,12 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token, verify_jwt_token
 
 urlpatterns = [
     # Route for web based admin page
     path('admin/', admin.site.urls),
     # Route for web based API Auth to local Model
     path(r'api-auth/', include('rest_framework.urls')),
+    # Route for JSON Web Token based API Auth to local Model
+    path(r'api-token-auth/', obtain_jwt_token),
+    path(r'api-token-refresh/', refresh_jwt_token),
+    path(r'api-token-verify/', verify_jwt_token),
     # Routes for RESTful API
     path(r'apiv1/', include('api.urls')),
 ]

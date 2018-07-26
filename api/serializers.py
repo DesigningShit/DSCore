@@ -5,18 +5,19 @@ from .models import RouteKeeperDeviceModel, Profile, RouteKeeperDeviceHistoryMod
 class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
-        fields = ('id','last_login','username','first_name','last_name','email','date_joined','address','city','state','zipcode')
+        fields = ('last_login','username','first_name','last_name','email','date_joined','address','city','state','zipcode','userkey')
         exclude_fields = ('url')
 
 class UserProfileURLSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Profile
-        fields = ('id','username','url')
+        fields = ('userkey','username','url')
 
 class RouteKeeperDeviceModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = RouteKeeperDeviceModel
         fields = ('__all__')
+        exclude_fields = ('userkey')
         read_only_fields = ('deviceid',)
         # fields = '__all__'
 

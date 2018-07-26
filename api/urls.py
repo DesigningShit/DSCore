@@ -7,7 +7,7 @@ from rest_framework import routers
 
 # REST loves routers
 router = routers.DefaultRouter()
-router.register(r'users', UserViewSet)
+router.register(r'users/list', UserViewSet)
 router.register(r'rkdevices/list', RouteKeeperDeviceModelViewSet)
 router.register(r'rkdevices/history', RouteKeeperDeviceHistoryModelViewSet)
 
