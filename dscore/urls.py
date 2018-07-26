@@ -17,7 +17,6 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path(r'', include('api.urls')),
     # Route for web based admin page
     path('admin/', admin.site.urls),
     # Route for web based API Auth to local Model

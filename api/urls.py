@@ -12,7 +12,6 @@ router.register(r'rkdevices', RouteKeeperDeviceModelViewSet)
 # Add the routers from above to the URL patterns
 urlpatterns = [
     path(r'', include(router.urls)),
-    path(r'geo/', getlocationbyip, name='getlocationbyip'),
-    path(r'geo/weather', getweather, name='getweather'),
-    path(r'geo/getlocationbyip', getlocationbyip, name='getlocationbyip'),
+    path('weather/get/byzip', getweather, name='getweather'),
+    path('location/get/byip', getlocationbyip, name='getlocationbyip'),
 ]
