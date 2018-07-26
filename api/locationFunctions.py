@@ -17,7 +17,7 @@ def getlocationbyip(request):
     if request.data:
         ipaddress = str(request.data)
     else: 
-        ipaddress='68.184.244.175'
+        return Response('IP Address Not Sent in Pipeline', status=status.HTTP_400_BAD_REQUEST)
     renderer_classes = (BrowsableAPIRenderer, JSONRenderer, )
     response = requests.get('http://api.ipstack.com/'+ipaddress+'?access_key='+GEO_ACCESS_KEY)
     geodata = response.json()

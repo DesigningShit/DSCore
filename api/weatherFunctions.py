@@ -17,7 +17,7 @@ def getweather(request):
     if request.data:
         zipcode = str(request.data)
     else: 
-        zipcode='63304'
+        return Response('ZIP Not Sent in Pipeline', status=status.HTTP_400_BAD_REQUEST)
     renderer_classes = (BrowsableAPIRenderer, JSONRenderer, )
     response = requests.get('https://api.openweathermap.org/data/2.5/weather?zip='+zipcode+',us&appid='+WEATHER_APP_ID)
     weather = response.json()
