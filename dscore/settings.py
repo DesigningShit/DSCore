@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
     # Add OUR sub-Applications here
     'api',
+    'iot',
 ]
 
 MIDDLEWARE = [

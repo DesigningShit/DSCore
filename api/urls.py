@@ -4,7 +4,7 @@ from .views import UserViewSet, RouteKeeperDeviceModelViewSet, RouteKeeperDevice
 from .locationFunctions import getlocationbyip
 from .weatherFunctions import getweather
 from .countryFunctions import getallcountries
-from .iotFunctions import IOTChannelModelViewSet, IOTSensorModelViewSet, IOTSensorReadingModelViewSet
+from iot.views import IOTChannelModelViewSet, IOTSensorModelViewSet, IOTSensorReadingModelViewSet
 from rest_framework import routers
 from rest_framework.documentation import include_docs_urls
 
@@ -15,13 +15,14 @@ router.register(r'rkdevices', RouteKeeperDeviceModelViewSet)
 router.register(r'rkdevicehistory', RouteKeeperDeviceHistoryModelViewSet)
 router.register(r'iot/channel', IOTChannelModelViewSet)
 router.register(r'iot/sensor', IOTSensorModelViewSet)
-router.register(r'iot/sensordata', IOTSensorReadingModelViewSet)
+router.register(r'iot/data', IOTSensorReadingModelViewSet)
 
 # Add the routers from above to the URL patterns
 urlpatterns = [
     path(r'', include(router.urls)),
+    #path(r'iot', include('iot.urls')),
+    path(r'docs/', include_docs_urls(title='DS Core API')),
     path('weather/get/byzip', getweather, name='getweather'),
     path('location/get/byip', getlocationbyip, name='getlocationbyip'),
     path('location/get/countries', getallcountries, name='getcountrylist'),
-    path(r'docs/', include_docs_urls(title='DS Core API'))
 ]

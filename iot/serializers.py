@@ -28,18 +28,3 @@ class IOTSensorReadingModelSerializer(serializers.ModelSerializer):
         model = IOTSensorReadingModel
         fields = ('created','data','sensor', 'sensorname', 'channel', 'channelid',)
         read_only_fields = ('sensorname','created','channel','channelid',)
-
-# Views/Viewsets are Here
-class IOTChannelModelViewSet(viewsets.ModelViewSet):
-    queryset = IOTChannelModel.objects.all()
-    serializer_class = IOTChannelModelSerializer
-
-class IOTSensorModelViewSet(viewsets.ModelViewSet):
-    queryset = IOTSensorModel.objects.all()
-    serializer_class = IOTSensorModelSerializer
-
-class IOTSensorReadingModelViewSet(viewsets.ModelViewSet):
-    queryset = IOTSensorReadingModel.objects.all()
-    serializer_class = IOTSensorReadingModelSerializer
-    filter_backends = (filters.SearchFilter,)
-    search_fields = ('sensor__name', 'sensor__sensorid', 'data', 'sensor__channel__name', 'sensor__channel__channelid' )
