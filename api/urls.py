@@ -4,7 +4,7 @@ from .views import UserViewSet, RouteKeeperDeviceModelViewSet, RouteKeeperDevice
 from .locationFunctions import getlocationbyip
 from .weatherFunctions import getweather
 from .countryFunctions import getallcountries
-from .views import IOTChannelModelViewSet, IOTSensorModelViewSet, IOTSensorReadingModelViewSet
+from .iotFunctions import IOTChannelModelViewSet, IOTSensorModelViewSet, IOTSensorReadingModelViewSet
 from rest_framework import routers
 
 # REST loves routers
