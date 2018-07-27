@@ -22,7 +22,7 @@ class IOTSensorReadingModelSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = IOTSensorReadingModel
-        fields = ('created','data','sensor')
+        fields = ('created','data','sensor',)
         exclude_fields = ('id',)
         # depth = 2
 

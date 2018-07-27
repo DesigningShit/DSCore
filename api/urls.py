@@ -6,6 +6,7 @@ from .weatherFunctions import getweather
 from .countryFunctions import getallcountries
 from .iotFunctions import IOTChannelModelViewSet, IOTSensorModelViewSet, IOTSensorReadingModelViewSet
 from rest_framework import routers
+from rest_framework.documentation import include_docs_urls
 
 # REST loves routers
 router = routers.DefaultRouter()
@@ -22,4 +23,5 @@ urlpatterns = [
     path('weather/get/byzip', getweather, name='getweather'),
     path('location/get/byip', getlocationbyip, name='getlocationbyip'),
     path('location/get/countries/list', getallcountries, name='getcountrylist'),
+    path(r'docs/', include_docs_urls(title='DS Core API'))
 ]
