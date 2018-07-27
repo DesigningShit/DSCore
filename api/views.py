@@ -9,7 +9,9 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 import requests
 from .models import RouteKeeperDeviceModel, Profile, RouteKeeperDeviceHistoryModel
+from .models import IOTChannelModel, IOTSensorModel, IOTSensorReadingModel
 from .serializers import RouteKeeperDeviceModelSerializer, UserProfileSerializer, UserProfileURLSerializer, RouteKeeperDeviceHistoryModelSerializer
+from .serializers import IOTChannelModelSerializer, IOTSensorModelSerializer, IOTSensorReadingModelSerializer
 from .keys import GEO_ACCESS_KEY, WEATHER_APP_ID
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -29,3 +31,14 @@ class RouteKeeperDeviceHistoryModelViewSet(viewsets.ModelViewSet):
     queryset = RouteKeeperDeviceHistoryModel.objects.all()
     serializer_class = RouteKeeperDeviceHistoryModelSerializer
 
+class IOTChannelModelViewSet(viewsets.ModelViewSet):
+    queryset = IOTChannelModel.objects.all()
+    serializer_class = IOTChannelModelSerializer
+
+class IOTSensorModelViewSet(viewsets.ModelViewSet):
+    queryset = IOTSensorModel.objects.all()
+    serializer_class = IOTSensorModelSerializer
+
+class IOTSensorReadingModelViewSet(viewsets.ModelViewSet):
+    queryset = IOTSensorReadingModel.objects.all()
+    serializer_class = IOTSensorReadingModelSerializer

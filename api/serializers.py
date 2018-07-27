@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
-from .models import RouteKeeperDeviceModel, Profile, RouteKeeperDeviceHistoryModel
+from .models import RouteKeeperDeviceModel, Profile, RouteKeeperDeviceHistoryModel, IOTChannelModel, IOTSensorModel, IOTSensorReadingModel
 
 class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
@@ -25,3 +25,19 @@ class RouteKeeperDeviceHistoryModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = RouteKeeperDeviceHistoryModel
         fields = ('deviceid','statuscode','datetime')
+
+class IOTChannelModelSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = IOTChannelModel
+        fields = ('__all__')
+
+class IOTSensorModelSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = IOTSensorModel
+        fields = ('__all__')
+
+class IOTSensorReadingModelSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = IOTSensorReadingModel
+        fields = ('__all__')
+        depth = 2
