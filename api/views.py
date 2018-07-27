@@ -24,6 +24,28 @@ class RouteKeeperDeviceModelViewSet(viewsets.ModelViewSet):
     queryset = RouteKeeperDeviceModel.objects.all()
     serializer_class = RouteKeeperDeviceModelSerializer
 
+    def get_queryset(self):
+            """
+            This view should return a list of all the RouteKeepers
+            for the currently authenticated user.
+            """
+            user = self.request.user
+            if user.is_superuser:
+                return RouteKeeperDeviceModel.objects.all()
+            else:
+                return RouteKeeperDeviceModel.objects.filter(owner=user)
+
 class RouteKeeperDeviceHistoryModelViewSet(viewsets.ModelViewSet):
     queryset = RouteKeeperDeviceHistoryModel.objects.all()
     serializer_class = RouteKeeperDeviceHistoryModelSerializer
+
+    def get_queryset(self):
+            """
+            This view should return a list of all the RouteKeeper
+            History for the currently authenticated user.
+            """
+            user = self.request.user
+            if user.is_superuser:
+                return RouteKeeperDeviceHistoryModel.objects.all()
+            else:
+                return RouteKeeperDeviceHistoryModel.objects.filter(deviceid__owner=user)
