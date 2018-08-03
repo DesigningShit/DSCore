@@ -28,4 +28,4 @@ class IOTSensorReadingModel(models.Model):
     data = models.CharField(max_length=250, default='Not Supplied')
 
     def __str__(self):
-        return self.sensor.name+':'+self.data
+        return self.sensor.sensorid+':'+self.data

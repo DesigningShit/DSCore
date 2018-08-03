@@ -7,13 +7,18 @@ import api.serializers
 
 # Serializers are Here
 class IOTChannelModelSerializer(serializers.ModelSerializer):
-
+    """
+    IOT Channel Serializer
+    """
     class Meta:
         model = IOTChannelModel
         fields = ('name','channelowner','channelid','created')
         read_only_fields = ('channelid','created')
 
 class IOTSensorModelSerializer(serializers.ModelSerializer):
+    """
+    IOT Sensor Serializer
+    """
     channel = IOTChannelModel.objects.all()
     owner = serializers.CharField(source='sensor.channel.channelowner.userkey',read_only=True)
     
@@ -23,6 +28,9 @@ class IOTSensorModelSerializer(serializers.ModelSerializer):
         read_only_fields = ('sensorid' , 'created' , 'owner')
 
 class IOTSensorReadingModelSerializer(serializers.ModelSerializer):
+    """
+    IOT Sensor Data Serializer
+    """
     sensor = IOTSensorModelSerializer()
     owner = serializers.CharField(source='sensor.channel.channelowner.userkey',read_only=True)
 

@@ -10,8 +10,12 @@ from .serializers import IOTChannelModelSerializer, IOTSensorModelSerializer, IO
 
 # Views/Viewsets are Here
 class IOTChannelModelViewSet(viewsets.ModelViewSet):
+    """
+    Channel view allows the user to query the API for a list or individual channel, as well as make updates or deletions.
+    """
     queryset = IOTChannelModel.objects.all()
     serializer_class = IOTChannelModelSerializer
+    lookup_field = "channelid"
 
     def get_queryset(self):
             """
@@ -25,12 +29,16 @@ class IOTChannelModelViewSet(viewsets.ModelViewSet):
                 return IOTChannelModel.objects.filter(channelowner=user)
 
 class IOTSensorModelViewSet(viewsets.ModelViewSet):
+    """
+    Sensor ViewSet
+    """
     queryset = IOTSensorModel.objects.all()
     serializer_class = IOTSensorModelSerializer
+    lookup_field = "sensorid"
 
     def get_queryset(self):
             """
-            This view should return a list of all the IOT Channels
+            This view should return a list of all the IOT Sensors
             for the currently authenticated user.
             """
             user = self.request.user
@@ -41,8 +49,22 @@ class IOTSensorModelViewSet(viewsets.ModelViewSet):
 
 
 class IOTSensorReadingModelViewSet(viewsets.ModelViewSet):
+    """
+    Sensor Reading ViewSet
+    """
     queryset = IOTSensorReadingModel.objects.all()
     serializer_class = IOTSensorReadingModelSerializer
     filter_backends = (filters.SearchFilter,)
     lookup_field = "readingid"
     search_fields = ('readingid','sensor__name', 'sensor__sensorid', 'data', 'sensor__channel__name', 'sensor__channel__channelid','sensor__context' )
+
+    def get_queryset(self):
+            """
+            This view should return a list of all the 
+            IOT Sensor Reading for the currently authenticated user.
+            """
+            user = self.request.user
+            if user.is_superuser:
+                return IOTSensorReadingModel.objects.all()
+            else:
+                return IOTSensorReadingModel.objects.filter(sensor__channel__channelowner=user)
