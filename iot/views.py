@@ -6,18 +6,9 @@ from rest_framework.decorators import api_view, renderer_classes, permission_cla
 from api.models import Profile
 from api.serializers import UserProfileSerializer, UserProfileURLSerializer
 from .models import IOTChannelModel, IOTSensorModel, IOTSensorReadingModel
-from .serializers import IOTChannelModelSerializer, IOTSensorModelSerializer, IOTSensorReadingModelSerializer, TestUserSerializer
+from .serializers import IOTChannelModelSerializer, IOTSensorModelSerializer, IOTSensorReadingModelSerializer
 
 # Views/Viewsets are Here
-class TestViewSet(viewsets.ModelViewSet):
-    queryset = Profile.objects.all()
-    serializer_class = TestUserSerializer
-
-    @list_route(methods=['get'], url_path='username/(?P<username>\w+)')
-    def getByUsername(self, request, username ):
-        user = get_object_or_404(Profile, username=username)
-        return Response(TestUserSerializer(user).data, status=status.HTTP_200_OK)
-
 class IOTChannelModelViewSet(viewsets.ModelViewSet):
     queryset = IOTChannelModel.objects.all()
     serializer_class = IOTChannelModelSerializer

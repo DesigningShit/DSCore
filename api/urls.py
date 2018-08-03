@@ -4,7 +4,7 @@ from .views import UserViewSet, RouteKeeperDeviceModelViewSet, RouteKeeperDevice
 from .locationFunctions import getlocationbyip
 from .weatherFunctions import getweather
 from .countryFunctions import getallcountries
-from iot.views import IOTChannelModelViewSet, IOTSensorModelViewSet, IOTSensorReadingModelViewSet, TestViewSet
+from iot.views import IOTChannelModelViewSet, IOTSensorModelViewSet, IOTSensorReadingModelViewSet
 from rest_framework import routers
 from rest_framework.documentation import include_docs_urls
 
@@ -16,7 +16,6 @@ router.register(r'rkdevicehistory', RouteKeeperDeviceHistoryModelViewSet)
 router.register(r'iot/channel', IOTChannelModelViewSet)
 router.register(r'iot/sensor', IOTSensorModelViewSet)
 router.register(r'iot/data', IOTSensorReadingModelViewSet)
-router.register(r'iot/users', TestViewSet)
 
 # Add the routers from above to the URL patterns
 urlpatterns = [
