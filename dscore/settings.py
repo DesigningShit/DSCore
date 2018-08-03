@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # Add OUR sub-Applications here
     'api',
     'iot',
+    'routekeeper',
 ]
 
 MIDDLEWARE = [

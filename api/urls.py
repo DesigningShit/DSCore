@@ -1,18 +1,19 @@
 from django.contrib import admin
 from django.urls import path, include
-from .views import UserViewSet, RouteKeeperDeviceModelViewSet, RouteKeeperDeviceHistoryModelViewSet
 from .locationFunctions import getlocationbyip
 from .weatherFunctions import getweather
 from .countryFunctions import getallcountries
 from iot.views import IOTChannelModelViewSet, IOTSensorModelViewSet, IOTSensorReadingModelViewSet
+from .views import UserViewSet
+from routekeeper.views import RouteKeeperDeviceHistoryModelViewSet, RouteKeeperDeviceModelViewSet
 from rest_framework import routers
 from rest_framework.documentation import include_docs_urls
 
 # REST loves routers
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
-router.register(r'rkdevices', RouteKeeperDeviceModelViewSet)
-router.register(r'rkdevicehistory', RouteKeeperDeviceHistoryModelViewSet)
+router.register(r'routekeeper/device', RouteKeeperDeviceModelViewSet)
+router.register(r'routekeeper/history', RouteKeeperDeviceHistoryModelViewSet)
 router.register(r'iot/channel', IOTChannelModelViewSet)
 router.register(r'iot/sensor', IOTSensorModelViewSet)
 router.register(r'iot/data', IOTSensorReadingModelViewSet)

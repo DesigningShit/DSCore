@@ -9,8 +9,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.contrib.auth.models import User
 import requests
-from .models import RouteKeeperDeviceModel, Profile, RouteKeeperDeviceHistoryModel
-from .serializers import RouteKeeperDeviceModelSerializer, UserProfileSerializer, UserProfileURLSerializer, RouteKeeperDeviceHistoryModelSerializer
+from .models import Profile
+from .serializers import UserProfileSerializer, UserProfileURLSerializer
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = Profile.objects.all()
@@ -23,25 +23,3 @@ class UserViewSet(viewsets.ModelViewSet):
                 return Profile.objects.all()
             else:
                 return Profile.objects.filter(username=user)
-
-class RouteKeeperDeviceModelViewSet(viewsets.ModelViewSet):
-    queryset = RouteKeeperDeviceModel.objects.all()
-    serializer_class = RouteKeeperDeviceModelSerializer
-
-    def get_queryset(self):
-            user = self.request.user
-            if user.is_superuser:
-                return RouteKeeperDeviceModel.objects.all()
-            else:
-                return RouteKeeperDeviceModel.objects.filter(owner=user)
-
-class RouteKeeperDeviceHistoryModelViewSet(viewsets.ModelViewSet):
-    queryset = RouteKeeperDeviceHistoryModel.objects.all()
-    serializer_class = RouteKeeperDeviceHistoryModelSerializer
-
-    def get_queryset(self):
-            user = self.request.user
-            if user.is_superuser:
-                return RouteKeeperDeviceHistoryModel.objects.all()
-            else:
-                return RouteKeeperDeviceHistoryModel.objects.filter(deviceid__owner=user)

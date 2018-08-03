@@ -27,5 +27,5 @@ urlpatterns = [
     path(r'api-token-refresh/', refresh_jwt_token),
     path(r'api-token-verify/', verify_jwt_token),
     # Routes for RESTful API
-    path(r'apiv1/', include('api.urls')),
+    path(r'api/v1/', include('api.urls')),
 ]
