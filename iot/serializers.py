@@ -35,9 +35,9 @@ class IOTSensorReadingModelSerializer(serializers.ModelSerializer):
     """
     IOT Sensor Data Serializer
     """
-    sensor = IOTSensorModelSerializer()
+    sensor = IOTSensorModel.objects.all()
 
     class Meta:
         model = IOTSensorReadingModel
         fields = ('sensor','readingid','data','created','modified')
-        read_only_fields = ('created' , 'channelid' , 'readingid','modified')
+        read_only_fields = ('created' , 'channelid' , 'readingid','modified','context')
