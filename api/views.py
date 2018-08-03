@@ -7,6 +7,7 @@ from rest_framework.renderers import BrowsableAPIRenderer, JSONRenderer
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from django.contrib.auth.models import User
 import requests
 from .models import RouteKeeperDeviceModel, Profile, RouteKeeperDeviceHistoryModel
 from .serializers import RouteKeeperDeviceModelSerializer, UserProfileSerializer, UserProfileURLSerializer, RouteKeeperDeviceHistoryModelSerializer

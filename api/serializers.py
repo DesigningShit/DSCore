@@ -7,11 +7,13 @@ class UserProfileSerializer(serializers.ModelSerializer):
         model = Profile
         fields = ('last_login','username','first_name','last_name','email','date_joined','address','city','state','zipcode','userkey')
         exclude_fields = ('url')
+        read_only_fields = ('userkey',)
 
 class UserProfileURLSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Profile
-        fields = ('userkey','username','url')
+        fields = ('userkey','username','url',)
+        read_only_fields = ('userkey',)
 
 class RouteKeeperDeviceModelSerializer(serializers.ModelSerializer):
     class Meta:

@@ -1,5 +1,5 @@
 from django.db import models
-from api.keygen import userKEY, deviceID, channelID, sensorID
+from api.keygen import channelID, sensorID
 from api.models import Profile
 
 class IOTChannelModel(models.Model):
