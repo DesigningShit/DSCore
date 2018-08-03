@@ -8,6 +8,8 @@ from .views import UserViewSet
 from routekeeper.views import RouteKeeperDeviceHistoryModelViewSet, RouteKeeperDeviceModelViewSet
 from rest_framework import routers
 from rest_framework.documentation import include_docs_urls
+from django.views.generic import TemplateView
+
 
 # REST loves routers
 router = routers.DefaultRouter()
@@ -23,6 +25,7 @@ urlpatterns = [
     path(r'', include(router.urls)),
     #path(r'iot', include('iot.urls')),
     path(r'docs/', include_docs_urls(title='DS Core API')),
+    path(r'iot/frontend', TemplateView.as_view(template_name='index.html')),
     path('weather/get/byzip', getweather, name='getweather'),
     path('location/get/byip', getlocationbyip, name='getlocationbyip'),
     path('location/get/countries', getallcountries, name='getcountrylist'),
