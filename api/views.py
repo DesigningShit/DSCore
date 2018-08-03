@@ -15,21 +15,20 @@ from .serializers import RouteKeeperDeviceModelSerializer, UserProfileSerializer
 class UserViewSet(viewsets.ModelViewSet):
     queryset = Profile.objects.all()
     serializer_class = UserProfileURLSerializer
-
-    @list_route(methods=['get'], url_path='username/(?P<username>\w+)')
-    def getByUsername(self, request, username ):
-        user = get_object_or_404(Profile, username=username)
-        return Response(UserProfileSerializer(user).data, status=status.HTTP_200_OK)
+    lookup_field = "username"
+    
+    def get_queryset(self):
+            user = self.request.user
+            if user.is_superuser:
+                return Profile.objects.all()
+            else:
+                return Profile.objects.filter(username=user)
 
 class RouteKeeperDeviceModelViewSet(viewsets.ModelViewSet):
     queryset = RouteKeeperDeviceModel.objects.all()
     serializer_class = RouteKeeperDeviceModelSerializer
 
     def get_queryset(self):
-            """
-            This view should return a list of all the RouteKeepers
-            for the currently authenticated user.
-            """
             user = self.request.user
             if user.is_superuser:
                 return RouteKeeperDeviceModel.objects.all()
@@ -41,10 +40,6 @@ class RouteKeeperDeviceHistoryModelViewSet(viewsets.ModelViewSet):
     serializer_class = RouteKeeperDeviceHistoryModelSerializer
 
     def get_queryset(self):
-            """
-            This view should return a list of all the RouteKeeper
-            History for the currently authenticated user.
-            """
             user = self.request.user
             if user.is_superuser:
                 return RouteKeeperDeviceHistoryModel.objects.all()
