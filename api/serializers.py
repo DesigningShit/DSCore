@@ -1,8 +1,8 @@
 from django.contrib.auth.models import User
-from rest_framework import serializers
+from rest_framework import serializers as s
 from .models import Profile
 
-class UserProfileSerializer(serializers.ModelSerializer):
+class UserProfileSerializer(s.ModelSerializer):
     class Meta:
         model = Profile
         fields = ('username','password','first_name','last_name','email','date_joined','address','city','state','zipcode','userkey','last_login')
@@ -10,14 +10,14 @@ class UserProfileSerializer(serializers.ModelSerializer):
         read_only_fields = ('userkey','date_joined','last_login')
         extra_kwargs = {'password': {'write_only': True}}
 
-class UserProfileURLSerializer(serializers.ModelSerializer):
-    first_name = serializers.CharField(required=True, help_text='First Name of User')
-    last_name = serializers.CharField(required=True, help_text='Last Name of User')
-    address = serializers.CharField(required=True, help_text='Street Address of User')
-    city = serializers.CharField(required=True, help_text='City of User')
-    state = serializers.CharField(required=True, help_text='State of User')
-    zipcode = serializers.CharField(required=True, help_text='Zip Code of User')
-    email = serializers.EmailField(required=True, help_text='E-Mail Address of User')
+class UserProfileURLSerializer(s.ModelSerializer):
+    first_name = s.CharField(required=True, help_text='First Name of User')
+    last_name = s.CharField(required=True, help_text='Last Name of User')
+    address = s.CharField(required=True, help_text='Street Address of User')
+    city = s.CharField(required=True, help_text='City of User')
+    state = s.CharField(required=True, help_text='State of User')
+    zipcode = s.CharField(required=True, help_text='Zip Code of User')
+    email = s.EmailField(required=True, help_text='E-Mail Address of User')
 
     class Meta:
         model = Profile

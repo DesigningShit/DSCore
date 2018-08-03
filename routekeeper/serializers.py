@@ -1,13 +1,13 @@
-from rest_framework import serializers
+from rest_framework import serializers as s
 from .models import RouteKeeperDeviceModel, RouteKeeperDeviceHistoryModel
 
-class RouteKeeperDeviceModelSerializer(serializers.ModelSerializer):
-    name = serializers.CharField(required=True)
-    ipDeviceName = serializers.CharField(required=True)
-    ipAddress = serializers.IPAddressField(required=True)
-    ipMask = serializers.IPAddressField(required=True)
-    ipGateway = serializers.IPAddressField(required=True)
-    ipExternalAddress = serializers.IPAddressField(required=True)
+class RouteKeeperDeviceModelSerializer(s.ModelSerializer):
+    name = s.CharField(required=True)
+    ipDeviceName = s.CharField(required=True)
+    ipAddress = s.IPAddressField(required=True)
+    ipMask = s.IPAddressField(required=True)
+    ipGateway = s.IPAddressField(required=True)
+    ipExternalAddress = s.IPAddressField(required=True)
 
     class Meta:
         model = RouteKeeperDeviceModel
@@ -15,7 +15,7 @@ class RouteKeeperDeviceModelSerializer(serializers.ModelSerializer):
         exclude_fields = ('userkey','id')
         read_only_fields = ('deviceid',)
 
-class RouteKeeperDeviceHistoryModelSerializer(serializers.ModelSerializer):
+class RouteKeeperDeviceHistoryModelSerializer(s.ModelSerializer):
     class Meta:
         model = RouteKeeperDeviceHistoryModel
         fields = ('deviceid','statuscode','datetime')
