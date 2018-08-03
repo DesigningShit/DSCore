@@ -7,6 +7,7 @@ class IOTChannelModel(models.Model):
     name = models.CharField(max_length=250, default='.')
     channelid = models.CharField(max_length=30, default=channelID, unique=True)
     created = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.name
@@ -16,6 +17,7 @@ class IOTSensorModel(models.Model):
     sensorid = models.CharField(max_length=30, default=sensorID, unique=True)
     name = models.CharField(max_length=250, default='Not Supplied')
     created = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)
     context = models.CharField(max_length=250, default='Undefined')
 
     def __str__(self):
@@ -25,6 +27,7 @@ class IOTSensorReadingModel(models.Model):
     sensor = models.ForeignKey('IOTSensorModel', related_name='sensor', to_field='sensorid', on_delete=models.CASCADE)
     readingid = models.CharField(max_length=30, default=dataID, unique=True)
     created = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)
     data = models.CharField(max_length=250, default='Not Supplied')
 
     def __str__(self):
