@@ -1,5 +1,5 @@
 from django.db import models
-from api.keygen import channelID, sensorID
+from api.keygen import channelID, sensorID, dataID
 from api.models import Profile
 
 class IOTChannelModel(models.Model):
@@ -16,12 +16,14 @@ class IOTSensorModel(models.Model):
     sensorid = models.CharField(max_length=30, default=sensorID, unique=True)
     name = models.CharField(max_length=250, default='Not Supplied')
     created = models.DateTimeField(auto_now_add=True)
+    context = models.CharField(max_length=250, default='Undefined')
 
     def __str__(self):
         return self.name
 
 class IOTSensorReadingModel(models.Model):
     sensor = models.ForeignKey('IOTSensorModel', related_name='sensor', to_field='sensorid', on_delete=models.CASCADE)
+    readingid = models.CharField(max_length=30, default=dataID, unique=True)
     created = models.DateTimeField(auto_now_add=True)
     data = models.CharField(max_length=250, default='Not Supplied')
 

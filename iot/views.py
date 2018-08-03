@@ -44,4 +44,5 @@ class IOTSensorReadingModelViewSet(viewsets.ModelViewSet):
     queryset = IOTSensorReadingModel.objects.all()
     serializer_class = IOTSensorReadingModelSerializer
     filter_backends = (filters.SearchFilter,)
-    search_fields = ('sensor__name', 'sensor__sensorid', 'data', 'sensor__channel__name', 'sensor__channel__channelid' )
+    lookup_field = "readingid"
+    search_fields = ('readingid','sensor__name', 'sensor__sensorid', 'data', 'sensor__channel__name', 'sensor__channel__channelid','sensor__context' )
