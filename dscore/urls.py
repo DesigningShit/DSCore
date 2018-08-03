@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token, verify_jwt_token
+from iotUI.views import home
 
 urlpatterns = [
     # Route for web based admin page
@@ -28,4 +29,5 @@ urlpatterns = [
     path(r'api-token-verify/', verify_jwt_token),
     # Routes for RESTful API
     path(r'api/v1/', include('api.urls')),
+    path('iot/frontend', home, name="iot_frontend")
 ]

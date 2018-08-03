@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}
+IOT Dashboard
+{% endblock %}
+{% block UItitle %}
+IOT User Dashboard
+{% endblock %}
+{% block content_control %}
+<link rel="stylesheet" href="{% static 'css/custom-iot.css' %}">
+<script src="{% static 'js/iot/custom-iot.js' %}"></script>
+<h4>My Registered Sensors</h4>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for sensors..">
+<table id="myTable">
+  <tr class="header">
+    <th style="width:10%;">Name</th>
+    <th style="width:10%;">ID</th>
+    <th style="width:10%;">Channel Name</th>
+    <th style="width:10%;">Sensor Context</th>
+    <th style="width:10%;">Created</th>
+    <th style="width:10%;">Modified</th>
+  </tr>
+  {% for s in mysensors %}
+  <tr>
+    <td>{{s.name}}</td>
+    <td>{{s.sensorid}}</td>
+    <td>{{s.channel}}</td>
+    <td>{{s.context}}</td>
+    <td>{{s.created}}</td>
+    <td>{{s.modified}}</td>
+  </tr>
+{% endfor %}
+    </table>
+    </div>
+</div>
+{% endblock %}
+
