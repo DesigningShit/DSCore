@@ -28,15 +28,15 @@
         <div class="mynavbar-header" id='mynavbar-header'>
           <a class="navbar-brand" id='mynavbar-brand' href="/iot/frontend">{% block UItitle %}{% endblock %}</a>
         </div>
-          <ul class="mynav navbar-nar navbar-right" id='mynav'>
-            
-          </ul>
           <ul class="nav navbar-nar navbar-right" id='mynav'>
               {% if user.is_authenticated %}
-              <li><a href="/iot/frontend"><img src="{% static '/img/buttons/rndsquare_green/button_dashboard.png' %}" alt="My Channels" style="width:100px;height:33px;border:0;"></a></li>
+                <li><a href="/api-auth/logout"><img src="{% static '/img/buttons/rndsquare_green/button_logout.png' %}" alt="My Channels" style="width:100px;height:33px;border:0;"></a></li>
               {% else %}
-              <li><a class="btn btn-small" id='mynav' href="http://designingshit.com" role="button">Purchase</a></li>
+              <li><a href="/iot/frontend"><img src="{% static '/img/buttons/rndsquare_green/button_login.png' %}" alt="My Channels" style="width:100px;height:33px;border:0;"></a></li>
               {% endif %}
+          </ul>
+          <ul class="nav navbar-nar navbar-right" id='mynav'>
+              <li><a href="/iot/frontend"><img src="{% static '/img/buttons/rndsquare_green/button_community.png' %}" alt="My Channels" style="width:100px;height:33px;border:0;"></a></li>  
           </ul>
       </div>
     </nav>

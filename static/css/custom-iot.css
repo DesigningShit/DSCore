@@ -35,7 +35,7 @@ tr:nth-child(even) {background-color: #d4ffd6;}
     border-collapse: collapse; /* Collapse borders */
     width: 100%; /* Full-width */
     border: 1px solid #ddd; /* Add a grey border */
-    font-size: 14px; /* Increase font-size */
+    font-size: 15px; /* Increase font-size */
 }
 
 #myTable th, #myTable td {
@@ -64,7 +64,7 @@ tr:nth-child(even) {background-color: #d4ffd6;}
     border-collapse: collapse; /* Collapse borders */
     width: 100%; /* Full-width */
     border: 0px; /* Add a grey border */
-    font-size: 14px; /* Increase font-size */
+    font-size: 18px; /* Increase font-size */
     text-align: center;
 }
 
