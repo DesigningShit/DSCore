@@ -2,39 +2,41 @@
 {% load staticfiles %}
 
 {% block title %}
-IOT Dashboard
+  IOT Dashboard
 {% endblock %}
+
 {% block UItitle %}
-IOT:DS-Core:Channels
+  DS-IOT : CHANNELS
 {% endblock %}
+
 {% block content_control %}
 <link rel="stylesheet" href="{% static 'css/custom-iot.css' %}">
 <script src="{% static 'js/iot/custom-iot.js' %}"></script>
+
 <div class='pull-right'><h5>My Registered Channels</h5></div>
 <div class=''><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for channels by name.."></div>
+
 <div style="overflow-x:auto;">
-<div class=''>
-<table id="myTable">
-  <tr class="header">
-    <th style="width:15%;"><center>Name</center></th>
-    <th style="width:10%;"><center>Channel ID</center></th>
-    <th style="width:10%;"><center>Channel Owner</center></th>
-    <th style="width:10%;"><center>Created</center></th>
-    <th style="width:10%;"><center>Modified</center></th>
-  </tr>
-  {% for c in mychannels %}
-  <tr>
-    <td>{{c.name}}</td>
-    <td><center>{{c.channelid}}</center></td>
-    <td><center>{{c.channelowner}}</center></td>
-    <td><center>{{c.created}}</center></td>
-    <td><center>{{c.modified}}</center></td>
-  </tr>
-{% endfor %}
-    </table>
-    <div class="text-info pull-right">{{ user.first_name }}</b> , you have {{ mychannelcount }} channels.</div>
-  </div></div>
-    </div>
+  <table id="myTable">
+    <tr class="header">
+      <th style="width:15%;"><center>Name</center></th>
+      <th style="width:10%;"><center>Channel ID</center></th>
+      <th style="width:10%;"><center>Channel Owner</center></th>
+      <th style="width:10%;"><center>Created</center></th>
+      <th style="width:10%;"><center>Modified</center></th>
+    </tr>
+      {% for c in mychannels %}
+        <tr>
+          <td>{{c.name}}</td>
+          <td><center>{{c.channelid}}</center></td>
+          <td><center>{{c.channelowner}}</center></td>
+          <td><center>{{c.created}}</center></td>
+          <td><center>{{c.modified}}</center></td>
+        </tr>
+      {% endfor %}
+  </table>
+<div class="text-info pull-right">{{ user.first_name }}</b> , you have {{ mychannelcount }} channels.</div>
 </div>
+
 {% endblock %}
 

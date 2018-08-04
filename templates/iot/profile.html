@@ -2,66 +2,64 @@
 {% load staticfiles %}
 
 {% block title %}
-IOT Dashboard
+  IOT Dashboard
 {% endblock %}
+
 {% block UItitle %}
-IOT:DS-Core:Sensors
+  DS-IOT : USERPROFILE
 {% endblock %}
+
 {% block content_control %}
+
 <link rel="stylesheet" href="{% static 'css/custom-iot.css' %}">
 <link rel="stylesheet" href="{% static 'css/font.css' %}">
+
 <script src="{% static 'js/iot/custom-iot.js' %}"></script>
+
 <div><h5>My Profile Information</h5></div>
 <div style="overflow-x:auto;">
-<div><table id="myTable">
-  <tr class="header">
-
-  </tr>
+  <div>
+    <table id="myTable">
       {% for p in profile %}
       <tr>
-      <th>Username</th>
-      <td>{{p.username}}</td>
+        <th>Username</th>
+          <td>{{p.username}}</td>
       </tr>
       <tr>
-      <th>E-Mail Address</th>
-      <td>{{p.email}}</td>
+        <th>E-Mail Address</th>
+          <td>{{p.email}}</td>
       </tr>
       <tr>
-      <th>First Name</th>
-      <td>{{p.first_name}}</td>
-      </tr>
+        <th>First Name</th>
+          <td>{{p.first_name}}</td>
       </tr>
       <tr>
-      <th>Last Name</th>
-      <td>{{p.last_name}}</td>
+        <th>Last Name</th>
+          <td>{{p.last_name}}</td>
       </tr>
-    </tr>
-    <tr>
-    <th>Address</th>
-    <td>{{p.address}}</td>
-    </tr>
-  </tr>
-  <tr>
-  <th>City</th>
-  <td>{{p.city}}</td>
-  </tr>
-</tr>
-<tr>
-<th>State</th>
-<td>{{p.state}}</td>
-</tr>
-</tr>
-<tr>
-<th>Zip Code</th>
-<td>{{p.zipcode}}</td>
-</tr>
-</tr>
-<tr>
-<th>User Key</th>
-<td>{{p.userkey}}</td>
-</tr>
+      <tr>
+        <th>Address</th>
+          <td>{{p.address}}</td>
+      </tr>
+      <tr>
+        <th>City</th>
+          <td>{{p.city}}</td>
+      </tr>
+      <tr>
+        <th>State</th>
+          <td>{{p.state}}</td>
+      </tr>
+      <tr>
+        <th>Zip Code</th>
+          <td>{{p.zipcode}}</td>
+      </tr>
+      <tr>
+        <th>User Key</th>
+          <td>{{p.userkey}}</td>
+      </tr>
       {% endfor %}
-</table></div>
+    </table>
+  <div>
 </div>
 {% endblock %}
 
