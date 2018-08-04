@@ -140,3 +140,11 @@ h5 {
     font-style:bold;
     font-size: 20px;
     }
+
+h2 {
+    color: rgb(12, 81, 211);
+    font-family: 'Ariel';
+    font-weight:normal;
+    font-style:bold;
+    font-size: 25px;
+    }

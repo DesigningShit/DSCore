@@ -1,18 +1,18 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/custom-iot.css' %}">
+<script src="{% static 'js/iot/custom-iot.js' %}"></script>
 
 {% block title %}
   IOT Dashboard
 {% endblock %}
 
 {% block UItitle %}
-  DS-IOT : HOME
+  DS-IOT : The JSON IoT API
 {% endblock %}
 
 {% block content_control %}
 
-<link rel="stylesheet" href="{% static 'css/custom-iot.css' %}">
-<script src="{% static 'js/iot/custom-iot.js' %}"></script>
 <br><br><br>
 
 <div class='jumbotron' style="overflow-x:auto;" id='CustomBody'>
