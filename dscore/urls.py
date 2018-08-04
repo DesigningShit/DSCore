@@ -17,12 +17,15 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token, verify_jwt_token
 from iotUI.views import home, MyChannels, MySensors, MyData, MyProfile
+from django.contrib.auth.admin import UserAdmin
+from django.contrib.auth import urls
 
 urlpatterns = [
     # Route for web based admin page
     path('admin/', admin.site.urls),
     # Route for web based API Auth to local Model
     path(r'api-auth/', include('rest_framework.urls')),
+    path(r'accounts/', include('rest_framework.urls')),
     # Route for JSON Web Token based API Auth to local Model
     path(r'api-token-auth/', obtain_jwt_token),
     path(r'api-token-refresh/', refresh_jwt_token),
@@ -33,5 +36,5 @@ urlpatterns = [
     path('iot/frontend/channels/', MyChannels, name="iot_frontend_channels"),
     path('iot/frontend/sensors/', MySensors, name="iot_frontend_sensors"),
     path('iot/frontend/data/', MyData, name="iot_frontend_data"),
-    path('iot/frontend/profile/', MyProfile, name="iot_frontend_profile")
+    path('iot/frontend/profile/', MyProfile, name="iot_frontend_profile"),
 ]

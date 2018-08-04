@@ -128,7 +128,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-LOGIN_REDIRECT_URL = '/apiv1/users/'
+LOGIN_REDIRECT_URL = '/iot/frontend'
+LOGOUT_REDIRECT_URL = '/iot/frontend'
+
 AUTH_USER_MODEL = 'api.Profile'
 
 JWT_AUTH = {
