@@ -5,7 +5,7 @@
 IOT Dashboard
 {% endblock %}
 {% block UItitle %}
-IOT User Dashboard
+IOT:DS-Core
 {% endblock %}
 {% block content_control %}
 <link rel="stylesheet" href="{% static 'css/custom-iot.css' %}">
@@ -14,12 +14,30 @@ IOT User Dashboard
   <div class='jumbotron' style="overflow-x:auto;">
     <table id='buttontable'>
       <tr>
-        <td><a href="frontend/channels"><img src="{% static '/img/buttons/rndsquare_green/button_channels.png' %}" alt="My Channels" style="width:200px;height:175px;border:2;"></a></td>
-        <td><a href="frontend/sensors"><img src="{% static '/img/buttons/rndsquare_green/button_sensors.png' %}" alt="My Sensors" style="width:200px;height:175px;border:2;"></a></td>
-        <td><a href="frontend/data"><img src="{% static '/img/buttons/rndsquare_green/button_data.png' %}" alt="My Data" style="width:200px;height:175px;border:2;"></a></td>
+        <td><a href="channels/"><img src="{% static '/img/buttons/rndsquare_green/button_channels.png' %}" alt="My Channels" style="width:200px;height:175px;border:2;"></a></td>
+        <td><a href="sensors/"><img src="{% static '/img/buttons/rndsquare_green/button_sensors.png' %}" alt="My Sensors" style="width:200px;height:175px;border:2;"></a></td>
+        <td><a href="data/"><img src="{% static '/img/buttons/rndsquare_green/button_data.png' %}" alt="My Data" style="width:200px;height:175px;border:2;"></a></td>
         <td><a href="default.asp"><img src="{% static '/img/buttons/rndsquare_green/button_profile.png' %}" alt="HTML tutorial" style="width:200px;height:175px;border:2;"></a></td>
       </tr>
     </table>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <div id='informationtable'>
+    <center>
+      <h4>Your Statistics</h4>
+      <table id='informationtable table'>
+        <tr>
+          <td>Channel Count</td>
+          <td>Sensor Count</td>
+          <td>Record Count</td>
+        </tr>  
+        <tr>
+          <td>{{ mychannelcount }}</td>
+          <td>{{ mysensorcount }}</td>
+          <td>{{ mydatacount }}</td>
+        </tr>
+      </table>
+    </center>
   </div>
+</div>
 {% endblock %}
 

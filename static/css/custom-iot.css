@@ -59,3 +59,28 @@ tr:nth-child(even) {background-color: #d4ffd6;}
     background-color: #4CAF50;
     color: white;
 }
+
+#informationtable {
+    border-collapse: collapse; /* Collapse borders */
+    width: 100%; /* Full-width */
+    border: 0px; /* Add a grey border */
+    font-size: 14px; /* Increase font-size */
+    text-align: center;
+}
+
+#informationtable th, #informationtable td {
+    text-align: left; /* Left-align text */
+    padding: 5px; /* Add padding */
+    border-bottom: 1px solid #4CAF50;
+    text-align: center;   
+}
+
+#informationtable tr {
+    /* Add a bottom border to all table rows */
+    border-bottom: 1px solid #ddd; 
+}
+
+#informationtable tr.header{
+    background-color: #4CAF50;
+    color: white;
+}

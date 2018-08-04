@@ -33,7 +33,7 @@
           </ul>
           <ul class="nav navbar-nar navbar-right" id='mynav'>
               {% if user.is_authenticated %}
-              <li><li><a class="btn btn-small" id='mynav' href="http://designingshit.com" role="button">Support</a></li></li>
+              <li><a href="/iot/frontend"><img src="{% static '/img/buttons/rndsquare_green/button_dashboard.png' %}" alt="My Channels" style="width:100px;height:33px;border:0;"></a></li>
               {% else %}
               <li><a class="btn btn-small" id='mynav' href="http://designingshit.com" role="button">Purchase</a></li>
               {% endif %}

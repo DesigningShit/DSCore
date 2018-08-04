@@ -5,7 +5,7 @@
 IOT Dashboard
 {% endblock %}
 {% block UItitle %}
-IOT User Dashboard
+IOT:DS-Core:Channels
 {% endblock %}
 {% block content_control %}
 <link rel="stylesheet" href="{% static 'css/custom-iot.css' %}">
@@ -32,6 +32,7 @@ IOT User Dashboard
   </tr>
 {% endfor %}
     </table>
+    <div class="text-info pull-right">{{ user.first_name }}</b> , you have {{ mychannelcount }} channels.</div>
   </div></div>
     </div>
 </div>
