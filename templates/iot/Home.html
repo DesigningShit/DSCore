@@ -10,29 +10,16 @@ IOT User Dashboard
 {% block content_control %}
 <link rel="stylesheet" href="{% static 'css/custom-iot.css' %}">
 <script src="{% static 'js/iot/custom-iot.js' %}"></script>
-<h4>My Registered Sensors</h4>
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for sensors..">
-<table id="myTable">
-  <tr class="header">
-    <th style="width:10%;">Name</th>
-    <th style="width:10%;">ID</th>
-    <th style="width:10%;">Channel Name</th>
-    <th style="width:10%;">Sensor Context</th>
-    <th style="width:10%;">Created</th>
-    <th style="width:10%;">Modified</th>
-  </tr>
-  {% for s in mysensors %}
-  <tr>
-    <td>{{s.name}}</td>
-    <td>{{s.sensorid}}</td>
-    <td>{{s.channel}}</td>
-    <td>{{s.context}}</td>
-    <td>{{s.created}}</td>
-    <td>{{s.modified}}</td>
-  </tr>
-{% endfor %}
+<br><br><br>
+  <div class='jumbotron' style="overflow-x:auto;">
+    <table id='buttontable'>
+      <tr>
+        <td><a href="frontend/channels"><img src="{% static '/img/buttons/rndsquare_green/button_channels.png' %}" alt="My Channels" style="width:200px;height:175px;border:2;"></a></td>
+        <td><a href="frontend/sensors"><img src="{% static '/img/buttons/rndsquare_green/button_sensors.png' %}" alt="My Sensors" style="width:200px;height:175px;border:2;"></a></td>
+        <td><a href="frontend/data"><img src="{% static '/img/buttons/rndsquare_green/button_data.png' %}" alt="My Data" style="width:200px;height:175px;border:2;"></a></td>
+        <td><a href="default.asp"><img src="{% static '/img/buttons/rndsquare_green/button_profile.png' %}" alt="HTML tutorial" style="width:200px;height:175px;border:2;"></a></td>
+      </tr>
     </table>
-    </div>
-</div>
+  </div>
 {% endblock %}
 

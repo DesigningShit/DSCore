@@ -9,5 +9,24 @@ from iot.models import IOTChannelModel, IOTSensorModel, IOTSensorReadingModel
 def home(request):
     my_channels = IOTChannelModel.objects.filter(channelowner=request.user)
     my_sensors = IOTSensorModel.objects.filter(channel__channelowner=request.user)
+    my_data = IOTSensorReadingModel.objects.filter(sensor__channel__channelowner=request.user)
 
-    return render(request, "iot/Home.html",{'mychannels': my_channels,'mysensors':my_sensors})
+    return render(request, "iot/Home.html",{'mychannels': my_channels,'mysensors':my_sensors,'mydata':my_data})
+
+@login_required
+def MyChannels(request):
+    my_channels = IOTChannelModel.objects.filter(channelowner=request.user)
+
+    return render(request, "iot/channel_list.html",{'mychannels': my_channels})
+
+@login_required
+def MySensors(request):
+    my_sensors = IOTSensorModel.objects.filter(channel__channelowner=request.user)
+
+    return render(request, "iot/sensor_list.html",{'mysensors':my_sensors})
+
+@login_required
+def MyData(request):
+    my_data = IOTSensorReadingModel.objects.filter(sensor__channel__channelowner=request.user)
+
+    return render(request, "iot/data_list.html",{'mydata':my_data})

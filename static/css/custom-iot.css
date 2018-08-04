@@ -1,3 +1,14 @@
+tr:nth-child(even) {background-color: #d4ffd6;}
+
+#mynavbar, #mynavbar-header, #mynavbar-brand, #mynav, #navbar-fixed-top, #mynav{
+    color: #ddd;
+    background-color:#4CAF50;
+    border-left-color:#4CAF50;
+    border-right-color: #4CAF50;
+    background-image: none;
+    background-repeat: no-repeat;
+   }
+
 #myInput {
     background-image: url( '/static/img/searchicon.png' );
     background-position: 10px 12px; /* Position the search icon */
@@ -5,9 +16,20 @@
     width: 30%; /* Full-width */
     font-size: 14px; /* Increase font-size */
     padding: 5px 10px 5px 40px; /* Add some padding */
-    border: 1px solid #ddd; /* Add a grey border */
+    border: 1px solid #4CAF50; /* Add a grey border */
     margin-bottom: 12px; /* Add some space below the input */
 }
+
+#buttontable {
+    border-collapse: collapse; /* Collapse borders */
+    width: 100%; /* Full-width */
+    border: 0px solid #ddd; /* Add a grey border */
+}
+
+#buttontable th, #buttontable td{
+    border: 10px;
+}
+
 
 #myTable {
     border-collapse: collapse; /* Collapse borders */
@@ -18,7 +40,8 @@
 
 #myTable th, #myTable td {
     text-align: left; /* Left-align text */
-    padding: 12px; /* Add padding */
+    padding: 5px; /* Add padding */
+    border-bottom: 1px solid #4CAF50;    
 }
 
 #myTable tr {
@@ -28,9 +51,11 @@
 
 #myTable tr:hover {
     /* Add a grey background color to the table header and on hover */
-    background-color: #f1f1f1;
+    background-color: #4CAF50;
+    color: #fff;
 }
 
 #myTable tr.header{
-    background-color: #a7ff95cc;
+    background-color: #4CAF50;
+    color: white;
 }

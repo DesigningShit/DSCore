@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}
+IOT Dashboard
+{% endblock %}
+{% block UItitle %}
+IOT User Dashboard
+{% endblock %}
+{% block content_control %}
+<link rel="stylesheet" href="{% static 'css/custom-iot.css' %}">
+<script src="{% static 'js/iot/custom-iot.js' %}"></script>
+<div class='pull-right'><h4>My Data</h4></div>
+<div class=''><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for data.."></div>
+<div style="overflow-x:auto;">
+<div class=''>
+<table id="myTable">
+  <tr class="header">
+    <th style="width:15%;"><center>Sensor</center></th>
+    <th style="width:10%;"><center>Reading ID</center></th>
+    <th style="width:10%;"><center>Data</center></th>
+    <th style="width:10%;"><center>Created</center></th>
+    <th style="width:10%;"><center>Modified</center></th>
+  </tr>
+  {% for d in mydata %}
+  <tr>
+    <td>{{d.sensor}}</td>
+    <td><center>{{d.readingid}}</center></td>
+    <td><center>{{d.data}}</center></td>
+    <td><center>{{d.created}}</center></td>
+    <td><center>{{d.modified}}</center></td>
+  </tr>
+{% endfor %}
+    </table>
+  </div></div>
+    </div>
+</div>
+{% endblock %}
+
