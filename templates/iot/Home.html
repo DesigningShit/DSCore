@@ -11,24 +11,24 @@ IOT:DS-Core
 <link rel="stylesheet" href="{% static 'css/custom-iot.css' %}">
 <script src="{% static 'js/iot/custom-iot.js' %}"></script>
 <br><br><br>
-  <div class='jumbotron' style="overflow-x:auto;">
+  <div class='jumbotron' style="overflow-x:auto;" id='CustomBody'>
     <table id='buttontable'>
       <tr>
-        <td><a href="channels/"><img src="{% static '/img/buttons/rndsquare_green/button_channels.png' %}" alt="My Channels" style="width:200px;height:175px;border:2;"></a></td>
-        <td><a href="sensors/"><img src="{% static '/img/buttons/rndsquare_green/button_sensors.png' %}" alt="My Sensors" style="width:200px;height:175px;border:2;"></a></td>
-        <td><a href="data/"><img src="{% static '/img/buttons/rndsquare_green/button_data.png' %}" alt="My Data" style="width:200px;height:175px;border:2;"></a></td>
-        <td><a href="default.asp"><img src="{% static '/img/buttons/rndsquare_green/button_profile.png' %}" alt="HTML tutorial" style="width:200px;height:175px;border:2;"></a></td>
+        <td><a href="channels/"><img src="{% static '/img/buttons/square_blackgreen/button_channels.png' %}" alt="My Channels" style="width:200px;height:175px;border:2;"></a></td>
+        <td><a href="sensors/"><img src="{% static '/img/buttons/square_blackgreen/button_sensors.png' %}" alt="My Sensors" style="width:200px;height:175px;border:2;"></a></td>
+        <td><a href="data/"><img src="{% static '/img/buttons/square_blackgreen/button_data.png' %}" alt="My Data" style="width:200px;height:175px;border:2;"></a></td>
+        <td><a href="profile/"><img src="{% static '/img/buttons/square_blackgreen/button_profile.png' %}" alt="HTML tutorial" style="width:200px;height:175px;border:2;"></a></td>
       </tr>
     </table>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   <div id='informationtable'>
     <center>
-      <h4>Your Statistics</h4>
+      <div id='TextBanner'><h3>Your Statistics</h3></div>
       <table id='informationtable table'>
         <tr>
-          <td>Channel Count</td>
-          <td>Sensor Count</td>
-          <td>Record Count</td>
+          <th>Channel Count</th>
+          <th>Sensor Count</th>
+          <th>Record Count</th>
         </tr>  
         <tr>
           <td>{{ mychannelcount }}</td>

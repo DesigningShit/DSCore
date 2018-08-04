@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token, verify_jwt_token
-from iotUI.views import home, MyChannels, MySensors, MyData
+from iotUI.views import home, MyChannels, MySensors, MyData, MyProfile
 
 urlpatterns = [
     # Route for web based admin page
@@ -32,5 +32,6 @@ urlpatterns = [
     path('iot/frontend/', home, name="iot_frontend"),
     path('iot/frontend/channels/', MyChannels, name="iot_frontend_channels"),
     path('iot/frontend/sensors/', MySensors, name="iot_frontend_sensors"),
-    path('iot/frontend/data/', MyData, name="iot_frontend_data")
+    path('iot/frontend/data/', MyData, name="iot_frontend_data"),
+    path('iot/frontend/profile/', MyProfile, name="iot_frontend_profile")
 ]

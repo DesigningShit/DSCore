@@ -3,7 +3,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from iot.models import IOTChannelModel, IOTSensorModel, IOTSensorReadingModel
-
+from django.contrib.auth.models import User
+from api.models import Profile
 
 @login_required
 def home(request):
@@ -30,3 +31,9 @@ def MyData(request):
     my_data = IOTSensorReadingModel.objects.filter(sensor__channel__channelowner=request.user)
 
     return render(request, "iot/data_list.html",{'mydata':my_data,'mydatacount':my_data.count()})
+
+@login_required
+def MyProfile(request):
+    profile = Profile.objects.filter(username=request.user)
+
+    return render(request, "iot/profile.html",{'profile':profile})

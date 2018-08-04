@@ -1,10 +1,31 @@
-tr:nth-child(even) {background-color: #d4ffd6;}
+tr:nth-child(even) {background-color: #333030;}
+
+@font-face {
+    font-family:"MADECannes";
+    src:url("/static/fonts/MADE_Cannes_PERSONAL_USE.eot?") format("eot"),
+    url("/static/fonts/MADE_Cannes_PERSONAL_USE.woff") format("woff"),
+    url("/static/fonts/MADE_Cannes_PERSONAL_USE.ttf") format("truetype"),
+    url("/static/fonts/MADE_Cannes_PERSONAL_USE.svg#MADECannes") format("svg");
+    font-weight:normal;
+    font-style:normal;
+}
+
+#CustomBody{
+    background-color: #1f1f1f;
+    color: #ddd;
+}
+
+#TextBanner{
+    background-color: rgb(31, 29, 29);
+    color: rgb(230, 226, 9);
+}
 
 #mynavbar, #mynavbar-header, #mynavbar-brand, #mynav, #navbar-fixed-top, #mynav{
-    color: #ddd;
-    background-color:#4CAF50;
-    border-left-color:#4CAF50;
-    border-right-color: #4CAF50;
+    color: rgb(230, 226, 9);
+    background-color:rgb(0, 0, 0);
+    /* background-color:rgb(59, 69, 70); */
+    border-left-color:rgb(59, 69, 70);
+    border-right-color:rgb(59, 69, 70);
     background-image: none;
     background-repeat: no-repeat;
    }
@@ -23,7 +44,6 @@ tr:nth-child(even) {background-color: #d4ffd6;}
 #buttontable {
     border-collapse: collapse; /* Collapse borders */
     width: 100%; /* Full-width */
-    border: 0px solid #ddd; /* Add a grey border */
 }
 
 #buttontable th, #buttontable td{
@@ -34,8 +54,8 @@ tr:nth-child(even) {background-color: #d4ffd6;}
 #myTable {
     border-collapse: collapse; /* Collapse borders */
     width: 100%; /* Full-width */
-    border: 1px solid #ddd; /* Add a grey border */
-    font-size: 15px; /* Increase font-size */
+    border: 0px solid #ddd; /* Add a grey border */
+    font-size: 14px; /* Increase font-size */
 }
 
 #myTable th, #myTable td {
@@ -51,13 +71,13 @@ tr:nth-child(even) {background-color: #d4ffd6;}
 
 #myTable tr:hover {
     /* Add a grey background color to the table header and on hover */
-    background-color: #4CAF50;
-    color: #fff;
+    background-color: rgb(31, 29, 29);
+    color: rgb(17, 160, 24);
 }
 
 #myTable tr.header{
-    background-color: #4CAF50;
-    color: white;
+    background-color: rgb(59, 69, 70);
+    color: rgb(230, 226, 9);
 }
 
 #informationtable {
@@ -68,11 +88,25 @@ tr:nth-child(even) {background-color: #d4ffd6;}
     text-align: center;
 }
 
-#informationtable th, #informationtable td {
+#informationtable tr.header{
+    background-color: rgb(59, 69, 70);
+}
+
+#informationtable th{
     text-align: left; /* Left-align text */
     padding: 5px; /* Add padding */
-    border-bottom: 1px solid #4CAF50;
-    text-align: center;   
+    border-bottom: 1px solid rgb(59, 69, 70);
+    text-align: center;
+    color: rgb(17, 160, 24);
+}
+
+#informationtable td {
+    text-align: left; /* Left-align text */
+    padding: 5px; /* Add padding */
+    background-color: rgb(31, 29, 29);
+    border-bottom: 1px solid rgb(59, 69, 70);
+    text-align: center;
+    color: rgb(12, 81, 211);
 }
 
 #informationtable tr {
@@ -80,7 +114,27 @@ tr:nth-child(even) {background-color: #d4ffd6;}
     border-bottom: 1px solid #ddd; 
 }
 
-#informationtable tr.header{
-    background-color: #4CAF50;
-    color: white;
-}
+h4 {
+    /* color: rgb(37, 204, 15); */
+    color: #ffff;
+    font-family: 'Ariel';
+    font-weight:normal;
+    font-style:bold;
+    font-size: 20px;
+    }
+
+h3 {
+    color: rgb(196, 243, 28);
+    font-family: 'MADECannes';
+    font-weight:normal;
+    font-style:bold;
+    font-size: 30px;
+    }
+
+h5 {
+    color: rgb(196, 243, 28);
+    font-family: 'MADECannes';
+    font-weight:normal;
+    font-style:bold;
+    font-size: 20px;
+    }
