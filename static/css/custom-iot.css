@@ -1,4 +1,8 @@
 tr:nth-child(even) {background-color: #333030;}
+img:last-of-type:hover{
+    border-radius: 0px;
+    background-color: #1f1f1f;
+}
 
 @font-face {
     font-family:"MADECannes";
@@ -21,13 +25,11 @@ tr:nth-child(even) {background-color: #333030;}
 
 #TextBanner{
     color: rgb(13, 10, 150);
+    
 }
 
-#mynavbar, #mynavbar-header, #mynavbar-brand, #mynav, #navbar-fixed-top{
-    /*background-image: linear-gradient(#5d5959, black);*/
+#mynavbar, #mynavbar-header, #mynavbar-brand, #mynav, #navbar-fixed-top, #nav{
     background: linear-gradient(rgb(92, 91, 91), black);
-    border-left-color:rgb(59, 69, 70);
-    border-right-color:rgb(59, 69, 70);
    }
 
 #myInput {
@@ -39,25 +41,18 @@ tr:nth-child(even) {background-color: #333030;}
     padding: 5px 10px 5px 40px; /* Add some padding */
     border: 1px solid #4CAF50; /* Add a grey border */
     margin-bottom: 12px; /* Add some space below the input */
+    color:black;
 }
 
 #buttontable {
-    border-collapse: collapse; /* Collapse borders */
     width: 100%; /* Full-width */
     padding-top: 70px;
     padding-bottom: 20px;
-    border: 0px solid #4CAF50;
 }
-
-#buttontable th, #buttontable td{
-    border: 10px;
-}
-
 
 #myTable {
     border-collapse: collapse; /* Collapse borders */
     width: 100%; /* Full-width */
-    border: 0px solid #ddd; /* Add a grey border */
     font-size: 14px; /* Increase font-size */
     background-color: rgb(31, 29, 29);
 }
@@ -88,15 +83,13 @@ tr:nth-child(even) {background-color: #333030;}
 #myTable tr.header{
     background-color: rgb(59, 69, 70);
     background: linear-gradient(rgb(92, 91, 91), black);
-    color: rgb(76, 144, 247);
+    color: rgb(109, 166, 252);
     font-size: 14px;
 }
 
 #informationtable {
-    border-collapse: collapse; /* Collapse borders */
     width: 100%; /* Full-width */
-    border: 0px; /* Add a grey border */
-    font-size: 18px; /* Increase font-size */
+    font-size: 24px; /* Increase font-size */
     text-align: center;
 }
 
@@ -105,11 +98,10 @@ tr:nth-child(even) {background-color: #333030;}
 }
 
 #informationtable th{
-    text-align: left; /* Left-align text */
     padding: 5px; /* Add padding */
-    border-bottom: 1px solid rgb(59, 69, 70);
     text-align: center;
-    color: rgb(12, 81, 211);
+    font-size: 14px;
+    color: #0f73e8;
 }
 
 #informationtable td {
@@ -117,15 +109,8 @@ tr:nth-child(even) {background-color: #333030;}
     padding: 5px; /* Add padding */
     background-color: rgb(31, 29, 29);
     background: linear-gradient(rgb(34, 34, 34), black);
-    border-bottom: 1px solid rgb(59, 69, 70);
-    text-align: center;
     color: rgb(197, 13, 13);
     
-}
-
-#informationtable tr {
-    /* Add a bottom border to all table rows */
-    border-bottom: 1px solid #ddd; 
 }
 
 h4 {
@@ -138,8 +123,8 @@ h4 {
     }
 
 h3 {
-    color: rgb(13, 10, 150);
-    font-family: 'MADECannes';
+    color: #0f73e8;
+    font-family: 'Almendra SC', serif;
     font-weight:normal;
     font-style:bold;
     font-size: 40px;
@@ -154,63 +139,69 @@ h5 {
     }
 
 h2 {
-    color: rgb(12, 81, 211);
-    font-family: 'Ariel';
+    color: #0f73e8;
+    font-family: 'Almendra SC', serif;
     font-weight:normal;
     font-style:bold;
-    font-size: 22px;
+    font-size: 25px;
     }
 
 #profileHeader {
-    color: rgb(13, 10, 150);
-    font-family: 'MADECannes';
+    color: #0f73e8;
+    font-family: 'Almendra SC', serif;
     font-weight: normal;
     font-style: bold;
-    font-size: 50px;
+    font-size: 40px;
     padding-top: 100px;
     padding-bottom: 50px;
     }
 
 #textFooter{
-    color: rgb(30, 99, 228);
+    color: #0f73e8;
     font-family: 'Ariel';
     font-style: 'bold';
     font-size: 14px;
     }
 
-    #profileTable {
-        align-self: center;
-        width: 50%;
-        border-collapse: collapse; /* Collapse borders */
-        border: 0px solid #ddd; /* Add a grey border */
-        font-size: 14px; /* Increase font-size */
-        background-color: rgb(31, 29, 29);
+#profileTable {
+    align-self: center;
+    width: 50%;
+    border-collapse: collapse; /* Collapse borders */
+    border: 0px solid #ddd; /* Add a grey border */
+    font-size: 14px; /* Increase font-size */
+    background-color: rgb(31, 29, 29);
     }
     
-    #profileTable td {
-        width: 20%;
-        text-align: left; /* Left-align text */
-        padding: 5px; /* Add padding */
-        border-bottom: 1px solid #4CAF50;    
+#profileTable td {
+    width: 20%;
+    text-align: left; /* Left-align text */
+    padding: 5px; /* Add padding */
+    border-bottom: 1px solid #4CAF50;    
     }
     
-    #profileTable tr {
-        /* Add a bottom border to all table rows */
-        border-bottom: 1px solid #4CAF50;
+#profileTable tr {
+    /* Add a bottom border to all table rows */
+    border-bottom: 1px solid #4CAF50;
     }
     
-    #profileTable tr:hover {
-        /* Add a grey background color to the table header and on hover */
-        background-color: rgb(31, 29, 29);
+#profileTable tr:hover {
+    /* Add a grey background color to the table header and on hover */
+    background-color: rgb(31, 29, 29);
         color: rgb(17, 160, 24);
     }
     
-    #profileTable th{
-        width: 10%;
-        background-color: rgb(59, 69, 70);
-        background: linear-gradient(rgb(92, 91, 91), black);
-        color: rgb(61, 58, 236);
-        font-size: 14px;
-        text-align: center;
+#profileTable th{
+    border-bottom: 1px solid black;
+    width: 10%;
+    background-color: rgb(59, 69, 70);
+    background: linear-gradient(rgb(92, 91, 91), black);
+    color: #0f73e8;
+    font-size: 14px;
+    text-align: center;
     }
+
+#buttontable img:last-of-type:hover{
+    border-radius: 10px;
+    box-shadow: 0.1px 0.1px 10px 10px rgb(4, 3, 92);
+}
     

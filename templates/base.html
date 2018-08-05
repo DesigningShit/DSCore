@@ -13,7 +13,8 @@
         <link rel="stylesheet" href="{% static 'css/main.css' %}">
         <link rel="stylesheet" href="{% static 'css/custom-iot.css' %}">
         <link rel="stylesheet" href="{% static 'css/font.css' %}">
-        
+        <link href="https://fonts.googleapis.com/css?family=Aclonica|Indie+Flower|Almendra+SC" rel="stylesheet">
+
         <title>{% block title %}{% endblock %}</title>
         
         <script src="{% static 'js/vendor/modernizr-2.8.3-respond-1.4.2.min.js' %}"></script>
@@ -21,7 +22,7 @@
     <body id='CustomBody'>
         <nav class="mynavbar navbar-fixed-top" role="navigation" id='mynavbar'>
             <div id='mynavbar'>
-                <ul class="nav navbar-nar navbar-right" id='mynav'>
+                <ul class="nav navbar-right" id='mynav'>
                     {% if user.is_authenticated %}
                         <li><a href="/api-auth/logout"><img src="{% static '/img/buttons/square_blackgreen/button_logout.png' %}" alt="My Channels" style="width:100px;height:33px;border:0;"></a></li>
                     {% else %}
