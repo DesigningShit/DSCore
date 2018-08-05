@@ -11,6 +11,8 @@ tr:nth-child(even) {background-color: #333030;}
 }
 
 #CustomBody{
+    background-image: url("/static/img/abstract-theme-dark-background.jpg");
+    background-blend-mode: hard-light;
     background-color: #1f1f1f;
     color: #ddd;
     padding-top: 70px;
@@ -18,18 +20,14 @@ tr:nth-child(even) {background-color: #333030;}
 }
 
 #TextBanner{
-    background-color: rgb(31, 29, 29);
-    color: rgb(230, 226, 9);
+    color: rgb(13, 10, 150);
 }
 
 #mynavbar, #mynavbar-header, #mynavbar-brand, #mynav, #navbar-fixed-top, #mynav{
-    color: rgb(230, 226, 9);
-    background-color:rgb(0, 0, 0);
-    /* background-color:rgb(59, 69, 70); */
+    /*background-image: linear-gradient(#5d5959, black);*/
+    background: linear-gradient(rgb(92, 91, 91), black);
     border-left-color:rgb(59, 69, 70);
     border-right-color:rgb(59, 69, 70);
-    background-image: none;
-    background-repeat: no-repeat;
    }
 
 #myInput {
@@ -46,6 +44,9 @@ tr:nth-child(even) {background-color: #333030;}
 #buttontable {
     border-collapse: collapse; /* Collapse borders */
     width: 100%; /* Full-width */
+    padding-top: 70px;
+    padding-bottom: 20px;
+    border: 0px solid #4CAF50;
 }
 
 #buttontable th, #buttontable td{
@@ -58,6 +59,7 @@ tr:nth-child(even) {background-color: #333030;}
     width: 100%; /* Full-width */
     border: 0px solid #ddd; /* Add a grey border */
     font-size: 14px; /* Increase font-size */
+    background-color: rgb(31, 29, 29);
 }
 
 #myTable th, #myTable td {
@@ -79,7 +81,9 @@ tr:nth-child(even) {background-color: #333030;}
 
 #myTable tr.header{
     background-color: rgb(59, 69, 70);
-    color: rgb(230, 226, 9);
+    background: linear-gradient(rgb(92, 91, 91), black);
+    color: rgb(76, 144, 247);
+    font-size: 16px;
 }
 
 #informationtable {
@@ -99,16 +103,18 @@ tr:nth-child(even) {background-color: #333030;}
     padding: 5px; /* Add padding */
     border-bottom: 1px solid rgb(59, 69, 70);
     text-align: center;
-    color: rgb(17, 160, 24);
+    color: rgb(12, 81, 211);
 }
 
 #informationtable td {
-    text-align: left; /* Left-align text */
+    text-align: center; /* Left-align text */
     padding: 5px; /* Add padding */
     background-color: rgb(31, 29, 29);
+    background: linear-gradient(rgb(34, 34, 34), black);
     border-bottom: 1px solid rgb(59, 69, 70);
     text-align: center;
-    color: rgb(12, 81, 211);
+    color: rgb(197, 13, 13);
+    
 }
 
 #informationtable tr {
@@ -126,16 +132,16 @@ h4 {
     }
 
 h3 {
-    color: rgb(196, 243, 28);
+    color: rgb(13, 10, 150);
     font-family: 'MADECannes';
     font-weight:normal;
     font-style:bold;
-    font-size: 30px;
+    font-size: 40px;
     }
 
 h5 {
     color: rgb(196, 243, 28);
-    font-family: 'MADECannes';
+    font-family: 'Ariel';
     font-weight:normal;
     font-style:bold;
     font-size: 20px;
@@ -146,5 +152,12 @@ h2 {
     font-family: 'Ariel';
     font-weight:normal;
     font-style:bold;
-    font-size: 25px;
+    font-size: 22px;
+    }
+
+#textFooter{
+    color: rgb(30, 99, 228);
+    font-family: 'Ariel';
+    font-style: 'bold';
+    font-size: 18px;
     }
