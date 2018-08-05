@@ -1,4 +1,3 @@
-tr:nth-child(even) {background-color: #333030;}
 
 @font-face {
     font-family:"MADECannes";
@@ -43,17 +42,21 @@ tr:nth-child(even) {background-color: #333030;}
 }
 
 #buttontable {
-    width: 100%; /* Full-width */
-    padding-top: 70px;
-    padding-bottom: 20px;
+    padding-top: 100px;
+    padding-bottom: 150px;
+    border: 0px;
+    width: 100%;
 }
 
 #myTable {
     border-collapse: collapse; /* Collapse borders */
     width: 100%; /* Full-width */
     font-size: 14px; /* Increase font-size */
-    opacity: 100%;
+    opacity: .8;
 }
+
+#myTable tr:nth-child(even) {background-color: #333030;}
+#myTable tr:nth-child(odd) {background-color: #0c0b0b;}
 
 #myTable th{
     text-align: center;
@@ -70,6 +73,7 @@ tr:nth-child(even) {background-color: #333030;}
 }
 
 #myTable tr:hover {
+    opacity: 1;
     background: linear-gradient(rgb(92, 91, 91), black);
     font-style: italic;
     font-weight: bold;
@@ -140,6 +144,7 @@ h2 {
     border: 0px solid #ddd; /* Add a grey border */
     font-size: 14px; /* Increase font-size */
     background-color: rgb(31, 29, 29);
+    opacity: .8;
     }
     
 #profileTable td {
@@ -170,9 +175,10 @@ h2 {
     text-align: center;
     }
 
-#buttontable img:last-of-type:hover{
+#buttontable img:hover{
     border-radius: 10px;
     box-shadow: 0.1px 0.1px 15px 15px #002550;
+    opacity: .7;
 }
 
 #informationtable {
@@ -196,10 +202,8 @@ h2 {
 }
 
 #CustomFooter {
-    justify-self: center;
-    align-self: center;
     text-align: center;
     width: 50%;
     font-size: 12px;
     opacity: 50%;
-    }
+}
