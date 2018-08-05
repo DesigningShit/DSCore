@@ -23,7 +23,7 @@ tr:nth-child(even) {background-color: #333030;}
     color: rgb(13, 10, 150);
 }
 
-#mynavbar, #mynavbar-header, #mynavbar-brand, #mynav, #navbar-fixed-top, #mynav{
+#mynavbar, #mynavbar-header, #mynavbar-brand, #mynav, #navbar-fixed-top{
     /*background-image: linear-gradient(#5d5959, black);*/
     background: linear-gradient(rgb(92, 91, 91), black);
     border-left-color:rgb(59, 69, 70);
@@ -62,7 +62,13 @@ tr:nth-child(even) {background-color: #333030;}
     background-color: rgb(31, 29, 29);
 }
 
-#myTable th, #myTable td {
+#myTable th{
+    text-align: left; /* Left-align text */
+    padding: 5px; /* Add padding */
+    border-bottom: 1px solid #4CAF50;    
+}
+
+#myTable td {
     text-align: left; /* Left-align text */
     padding: 5px; /* Add padding */
     border-bottom: 1px solid #4CAF50;    
@@ -75,7 +81,7 @@ tr:nth-child(even) {background-color: #333030;}
 
 #myTable tr:hover {
     /* Add a grey background color to the table header and on hover */
-    background-color: rgb(31, 29, 29);
+    background: linear-gradient(rgb(92, 91, 91), black);
     color: rgb(17, 160, 24);
 }
 
@@ -83,7 +89,7 @@ tr:nth-child(even) {background-color: #333030;}
     background-color: rgb(59, 69, 70);
     background: linear-gradient(rgb(92, 91, 91), black);
     color: rgb(76, 144, 247);
-    font-size: 16px;
+    font-size: 14px;
 }
 
 #informationtable {
@@ -159,5 +165,41 @@ h2 {
     color: rgb(30, 99, 228);
     font-family: 'Ariel';
     font-style: 'bold';
-    font-size: 18px;
+    font-size: 14px;
     }
+
+    #profileTable {
+        align-self: center;
+        width: 50%;
+        border-collapse: collapse; /* Collapse borders */
+        border: 0px solid #ddd; /* Add a grey border */
+        font-size: 14px; /* Increase font-size */
+        background-color: rgb(31, 29, 29);
+    }
+    
+    #profileTable td {
+        width: 20%;
+        text-align: left; /* Left-align text */
+        padding: 5px; /* Add padding */
+        border-bottom: 1px solid #4CAF50;    
+    }
+    
+    #profileTable tr {
+        /* Add a bottom border to all table rows */
+        border-bottom: 1px solid #4CAF50;
+    }
+    
+    #profileTable tr:hover {
+        /* Add a grey background color to the table header and on hover */
+        background-color: rgb(31, 29, 29);
+        color: rgb(17, 160, 24);
+    }
+    
+    #profileTable th{
+        width: 10%;
+        background-color: rgb(59, 69, 70);
+        background: linear-gradient(rgb(92, 91, 91), black);
+        color: rgb(76, 144, 247);
+        font-size: 16px;
+    }
+    

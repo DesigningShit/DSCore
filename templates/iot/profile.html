@@ -12,14 +12,13 @@
 {% block content_control %}
 
 <link rel="stylesheet" href="{% static 'css/custom-iot.css' %}">
-<link rel="stylesheet" href="{% static 'css/font.css' %}">
 
 <script src="{% static 'js/iot/custom-iot.js' %}"></script>
 
-<div><h5>My Profile Information</h5></div>
+<div><h3><center>My Profile Information</h3></center></div>
 <div style="overflow-x:auto;">
-  <div>
-    <table id="myTable">
+  <center>
+  <table id="profileTable" class='profileTable'>
       {% for p in profile %}
       <tr>
         <th>Username</th>
@@ -58,8 +57,7 @@
           <td>{{p.userkey}}</td>
       </tr>
       {% endfor %}
-    </table>
-  <div>
+    </table></center> 
 </div>
 {% endblock %}
 
