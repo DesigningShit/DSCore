@@ -10,13 +10,13 @@
 }
 
 #CustomBody{
-    background-image: url("/static/img/abstract-theme-dark-background.jpg");
-    background-blend-mode: hard-light;
+    background-image: url("/static/img/abstract-theme-dark-background4.jpg");
+    background-blend-mode: soft-light;
     background-color: #1f1f1f;
     font-family: 'Oswald';
     color: #ddd;
-    padding-top: 70px;
-    padding-bottom: 20px;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 #TextBanner{
@@ -26,6 +26,8 @@
 
 #mynavbar, #mynavbar-header, #mynavbar-brand, #mynav, #navbar-fixed-top, #nav{
     background: linear-gradient(rgb(92, 91, 91), black);
+    opacity: .8;
+    color: #4CAF50;
    }
 
 #myInput {
@@ -35,7 +37,7 @@
     font-family: 'Playfair Display', serif;
     font-size: 14px;
     text-align: center;
-    padding: 5px 10px 5px 40px;
+    padding: 5px 40px 5px 40px;
     border: 2px solid rgb(2, 46, 82);
     margin-bottom: 12px;
     color:whitesmoke;
@@ -46,15 +48,14 @@
     padding-bottom: 150px;
     width: 100%;
     font-size: 20px;
-    opacity: .95;
+    opacity: .8;
 }
 
 #buttontable td{
     width: 25%;
     text-align: center;
-    opacity: .7;
     padding: 10px;
-    background: #000000;
+    /*background: #000000;*/
     color: #e01515;
     font-weight: bold;
 }
@@ -62,11 +63,11 @@
 #buttontable th{
     width: 25%;
     text-align: center;
-    opacity: .8;
     padding: 10px;
 }
 
 #myTable {
+    padding-top: 100px;
     border-collapse: collapse; /* Collapse borders */
     width: 100%; /* Full-width */
     font-size: 14px; /* Increase font-size */
@@ -78,7 +79,7 @@
 
 #myTable th{
     text-align: center;
-    padding: 5px;
+    padding: 8px;
 }
 
 #myTable td {
@@ -91,7 +92,7 @@
 }
 
 #myTable tr:hover {
-    opacity: 1;
+    opacity: .95;
     background: linear-gradient(rgb(92, 91, 91), black);
     font-style: italic;
     font-weight: bold;
@@ -114,7 +115,7 @@ h4 {
     }
 
 h3 {
-    color: #0f73e8;
+    color: rgb(197, 13, 13);
     font-family: 'Almendra SC', serif;
     font-weight:normal;
     font-style:bold;
@@ -130,7 +131,7 @@ h5 {
     }
 
 h2 {
-    color: #0f73e8;
+    color: rgb(197, 13, 13);
     font-family: 'Oswald';
     font-weight:normal;
     font-style:bold;
@@ -194,8 +195,8 @@ h2 {
     }
 
 #buttontable img:hover{
-    border-radius: 10px;
-    box-shadow: 0.1px 0.1px 15px 15px #002550;
+    border-radius: 5px;
+    box-shadow: 0.1px 0.1px 10px 10px #52be1f;
     opacity: .7;
 }
 
