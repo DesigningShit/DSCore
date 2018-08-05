@@ -24,22 +24,15 @@
     </tr>
   </table>
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  <div id='informationtable'>
-    <center>
-      <div id='TextBanner'><h3>Your Statistics</h3></div>
-    <table id='informationtable table'>
-      <tr>
-        <th>Channel Count</th>
-        <th>Sensor Count</th>
-        <th>Record Count</th>
-      </tr>  
-      <tr>
-        <td>{{ mychannelcount }}</td>
-        <td>{{ mysensorcount }}</td>
-        <td>{{ mydatacount }}</td>
-      </tr>
-    </table>
-    </center>
+  <center><footer id='CustomFooter'>
+        <table id='informationtable'>
+            <tr>
+              <th>Channel Count</th><td>{{ mychannelcount }}</td>
+              <th>Sensor Count</th><td>{{ mysensorcount }}</td>
+              <th>Record Count</th><td>{{ mydatacount }}</td>
+            </tr>
+        </table>
+  </footer></center>
 
 {% endblock %}
 

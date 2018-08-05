@@ -1,8 +1,4 @@
 tr:nth-child(even) {background-color: #333030;}
-img:last-of-type:hover{
-    border-radius: 0px;
-    background-color: #1f1f1f;
-}
 
 @font-face {
     font-family:"MADECannes";
@@ -18,6 +14,7 @@ img:last-of-type:hover{
     background-image: url("/static/img/abstract-theme-dark-background.jpg");
     background-blend-mode: hard-light;
     background-color: #1f1f1f;
+    font-family: 'Oswald';
     color: #ddd;
     padding-top: 70px;
     padding-bottom: 20px;
@@ -33,15 +30,16 @@ img:last-of-type:hover{
    }
 
 #myInput {
-    background-image: url( '/static/img/searchicon.png' );
-    background-position: 10px 12px; /* Position the search icon */
-    background-repeat: no-repeat; /* Do not repeat the icon image */
-    width: 30%; /* Full-width */
-    font-size: 14px; /* Increase font-size */
-    padding: 5px 10px 5px 40px; /* Add some padding */
-    border: 1px solid #4CAF50; /* Add a grey border */
-    margin-bottom: 12px; /* Add some space below the input */
-    color:black;
+    background: linear-gradient(rgb(92, 91, 91), black);
+    background-color: #333030;
+    width: 90%;
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    text-align: center;
+    padding: 5px 10px 5px 40px;
+    border: 2px solid rgb(2, 46, 82);
+    margin-bottom: 12px;
+    color:whitesmoke;
 }
 
 #buttontable {
@@ -54,69 +52,40 @@ img:last-of-type:hover{
     border-collapse: collapse; /* Collapse borders */
     width: 100%; /* Full-width */
     font-size: 14px; /* Increase font-size */
-    background-color: rgb(31, 29, 29);
+    opacity: 100%;
 }
 
 #myTable th{
-    text-align: left; /* Left-align text */
-    padding: 5px; /* Add padding */
-    border-bottom: 1px solid #4CAF50;    
+    text-align: center;
+    padding: 5px;
 }
 
 #myTable td {
-    text-align: left; /* Left-align text */
-    padding: 5px; /* Add padding */
-    border-bottom: 1px solid #4CAF50;    
+    text-align: left;
+    padding: 5px;
 }
 
 #myTable tr {
-    /* Add a bottom border to all table rows */
-    border-bottom: 1px solid #ddd; 
+    border-bottom: 1px solid rgb(26, 129, 0); 
 }
 
 #myTable tr:hover {
-    /* Add a grey background color to the table header and on hover */
     background: linear-gradient(rgb(92, 91, 91), black);
+    font-style: italic;
+    font-weight: bold;
     color: rgb(17, 160, 24);
 }
 
 #myTable tr.header{
-    background-color: rgb(59, 69, 70);
     background: linear-gradient(rgb(92, 91, 91), black);
     color: rgb(109, 166, 252);
     font-size: 14px;
 }
 
-#informationtable {
-    width: 100%; /* Full-width */
-    font-size: 24px; /* Increase font-size */
-    text-align: center;
-}
-
-#informationtable tr.header{
-    background-color: rgb(59, 69, 70);
-}
-
-#informationtable th{
-    padding: 5px; /* Add padding */
-    text-align: center;
-    font-size: 14px;
-    color: #0f73e8;
-}
-
-#informationtable td {
-    text-align: center; /* Left-align text */
-    padding: 5px; /* Add padding */
-    background-color: rgb(31, 29, 29);
-    background: linear-gradient(rgb(34, 34, 34), black);
-    color: rgb(197, 13, 13);
-    
-}
-
 h4 {
     /* color: rgb(37, 204, 15); */
     color: #ffff;
-    font-family: 'Ariel';
+    font-family: 'Oswald';
     font-weight:normal;
     font-style:bold;
     font-size: 20px;
@@ -140,7 +109,7 @@ h5 {
 
 h2 {
     color: #0f73e8;
-    font-family: 'Almendra SC', serif;
+    font-family: 'Oswald';
     font-weight:normal;
     font-style:bold;
     font-size: 25px;
@@ -148,19 +117,20 @@ h2 {
 
 #profileHeader {
     color: #0f73e8;
-    font-family: 'Almendra SC', serif;
+    font-family: 'Oswald';
     font-weight: normal;
-    font-style: bold;
     font-size: 40px;
     padding-top: 100px;
     padding-bottom: 50px;
     }
 
 #textFooter{
+    align-self: center;
     color: #0f73e8;
-    font-family: 'Ariel';
+    font-family: 'Oswald';
     font-style: 'bold';
     font-size: 14px;
+    text-align: center;
     }
 
 #profileTable {
@@ -202,6 +172,34 @@ h2 {
 
 #buttontable img:last-of-type:hover{
     border-radius: 10px;
-    box-shadow: 0.1px 0.1px 10px 10px rgb(4, 3, 92);
+    box-shadow: 0.1px 0.1px 15px 15px #002550;
 }
-    
+
+#informationtable {
+    font-size: 24px;
+    text-align: center;
+}
+
+#informationtable th{
+    background: linear-gradient(rgb(34, 34, 34), black);
+    padding: 5px;
+    text-align: center;
+    font-size: 14px;
+    color: #0f73e8;
+}
+
+#informationtable td {
+    text-align: center;
+    padding: 5px;
+    background: linear-gradient(rgb(34, 34, 34), black);
+    color: rgb(197, 13, 13);
+}
+
+#CustomFooter {
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    width: 50%;
+    font-size: 12px;
+    opacity: 50%;
+    }

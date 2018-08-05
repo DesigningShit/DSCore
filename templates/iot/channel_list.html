@@ -18,19 +18,19 @@
 <div style="overflow-x:auto;">
   <table id="myTable">
     <tr class="header">
-      <th style="width:15%;"><center>Name</center></th>
-      <th style="width:10%;"><center>Channel ID</center></th>
-      <th style="width:10%;"><center>Channel Owner</center></th>
-      <th style="width:10%;"><center>Created</center></th>
-      <th style="width:10%;"><center>Modified</center></th>
+      <th style="width:15%;">Name</th>
+      <th style="width:10%;">Channel ID</th>
+      <th style="width:10%;">Channel Owner</th>
+      <th style="width:10%;">Created</th>
+      <th style="width:10%;">Modified</th>
     </tr>
       {% for c in mychannels %}
         <tr>
           <td>{{c.name}}</td>
-          <td><center>{{c.channelid}}</center></td>
-          <td><center>{{c.channelowner}}</center></td>
-          <td><center>{{c.created}}</center></td>
-          <td><center>{{c.modified}}</center></td>
+          <th>{{c.channelid}}</th>
+          <th>{{c.channelowner}}</th>
+          <th>{{c.created}}</th>
+          <th>{{c.modified}}</th>
         </tr>
       {% endfor %}
   </table>
