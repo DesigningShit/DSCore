@@ -44,8 +44,26 @@
 #buttontable {
     padding-top: 100px;
     padding-bottom: 150px;
-    border: 0px;
     width: 100%;
+    font-size: 20px;
+    opacity: .95;
+}
+
+#buttontable td{
+    width: 25%;
+    text-align: center;
+    opacity: .7;
+    padding: 10px;
+    background: #000000;
+    color: #e01515;
+    font-weight: bold;
+}
+
+#buttontable th{
+    width: 25%;
+    text-align: center;
+    opacity: .8;
+    padding: 10px;
 }
 
 #myTable {

@@ -14,27 +14,22 @@
 
 {% block content_control %}
 
-<div id='buttontable'>
+<div id="buttontable">
   <table id="buttontable">
     <tr>
-      <td><a href="channels/"><img src="{% static '/img/buttons/square_blackgreen/button_channels.png' %}" alt="My Channels"></a></td>
-      <td><a href="sensors/"><img src="{% static '/img/buttons/square_blackgreen/button_sensors.png' %}" alt="My Sensors"></a></td>
-      <td><a href="data/"><img src="{% static '/img/buttons/square_blackgreen/button_data.png' %}" alt="My Data"></a></td>
-      <td><a href="profile/"><img src="{% static '/img/buttons/square_blackgreen/button_profile.png' %}" alt="My Profile"></a></td>
+      <th><a href="channels/"><img src="{% static '/img/buttons/square_blackgreen/button_channels.png' %}" alt="My Channels"></a></th>
+      <th><a href="sensors/"><img src="{% static '/img/buttons/square_blackgreen/button_sensors.png' %}" alt="My Sensors"></a></th>
+      <th><a href="data/"><img src="{% static '/img/buttons/square_blackgreen/button_data.png' %}" alt="My Data"></a></th>
+      <th><a href="profile/"><img src="{% static '/img/buttons/square_blackgreen/button_profile.png' %}" alt="My Profile"></a></th>
+    </tr>
+    <tr>
+        <td>Channel Count : {{ mychannelcount }}</td>
+        <td>Sensor Count : {{ mysensorcount }}</td>
+        <td>Record Count : {{ mydatacount }}</td>
+        <th></th>
     </tr>
   </table>
 </div>
-  <center>
-    <footer id='CustomFooter'>
-        <table id='informationtable'>
-            <tr>
-              <th>Channel Count</th><td>{{ mychannelcount }}</td>
-              <th>Sensor Count</th><td>{{ mysensorcount }}</td>
-              <th>Record Count</th><td>{{ mydatacount }}</td>
-            </tr>
-        </table>
-    </footer>
-  </center>
 
 {% endblock %}
 
