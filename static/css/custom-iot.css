@@ -161,6 +161,16 @@ h2 {
     font-size: 22px;
     }
 
+#profileHeader {
+    color: rgb(13, 10, 150);
+    font-family: 'MADECannes';
+    font-weight: normal;
+    font-style: bold;
+    font-size: 50px;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    }
+
 #textFooter{
     color: rgb(30, 99, 228);
     font-family: 'Ariel';
@@ -199,7 +209,8 @@ h2 {
         width: 10%;
         background-color: rgb(59, 69, 70);
         background: linear-gradient(rgb(92, 91, 91), black);
-        color: rgb(76, 144, 247);
-        font-size: 16px;
+        color: rgb(61, 58, 236);
+        font-size: 14px;
+        text-align: center;
     }
     
