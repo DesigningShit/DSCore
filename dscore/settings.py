@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_filters',
+    'django_coverage',
     # Add additional extensions
     'rest_framework',
     'webpack_loader',
