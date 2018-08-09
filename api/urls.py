@@ -3,7 +3,7 @@ from django.urls import path, include
 from .locationFunctions import getlocationbyip
 from .weatherFunctions import getweather
 from .countryFunctions import getallcountries
-from iot.views import IOTChannelModelViewSet, IOTSensorModelViewSet, IOTSensorReadingModelViewSet
+from iot.views import IOTChannelModelViewSet, IOTSensorModelViewSet, IOTSensorReadingModelViewSet, IOTTenantModelViewSet, IOTCustomerModelViewSet
 from .views import UserViewSet
 from routekeeper.views import RouteKeeperDeviceHistoryModelViewSet, RouteKeeperDeviceModelViewSet
 from rest_framework import routers
@@ -16,7 +16,9 @@ router.register(r'users', UserViewSet)
 router.register(r'routekeeper/device', RouteKeeperDeviceModelViewSet)
 router.register(r'routekeeper/history', RouteKeeperDeviceHistoryModelViewSet)
 router.register(r'iot/channel', IOTChannelModelViewSet)
+router.register(r'iot/customer', IOTCustomerModelViewSet)
 router.register(r'iot/sensor', IOTSensorModelViewSet)
+router.register(r'iot/tenant', IOTTenantModelViewSet)
 router.register(r'iot/data', IOTSensorReadingModelViewSet)
 
 # Add the routers from above to the URL patterns

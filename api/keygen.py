@@ -67,3 +67,19 @@ def dataID():
     e12 = e1 = random.choice('abcdefghijlmnopqrstz')
     final_element = e1+e2+e3+e4+e5+e6+e7+e8+e9+e10+e11+e12
     return final_element
+
+def getRandomID():
+    e1 = random.choice('abcdefghijklmnopqrstuvwxyz')
+    e2 = str(random.randint(100, 999))
+    e3 = random.choice('abcdefwxyz')
+    e4 = random.choice('klmnopqrstuv')
+    e5 = str(random.randint(100, 999))
+    e6 = e1 = random.choice('abcdefghijklmnopqrstu')
+    e7 = random.choice('abcdefghij')
+    e8 = str(random.randint(100, 999))
+    e9 = random.choice('abcdefwxyz')
+    e10 = random.choice('klmnopqrstuv')
+    e11 = str(random.randint(100, 999))
+    e12 = e1 = random.choice('abcdefghijlmnopqrstz')
+    final_element = e1+e2+e3+e4+e5+e6+e7+e8+e9+e10+e11+e12
+    return final_element
