@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     # Add OUR sub-Applications here
     'api',
     'iot',
-    'iotUI',
     'routekeeper',
 ]
 
@@ -129,8 +128,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-LOGIN_REDIRECT_URL = '/iot/frontend'
-LOGOUT_REDIRECT_URL = '/iot/frontend'
+LOGIN_REDIRECT_URL = '/api/v1'
+LOGOUT_REDIRECT_URL = '/api/v1'
 
 AUTH_USER_MODEL = 'api.Profile'
 
